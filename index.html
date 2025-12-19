@@ -12,10 +12,26 @@
       color: #333;
     }
     header {
-      background: url('image/logo.jpg') center center / cover no-repeat;
+      position: relative;
+      background: url('image/logo.jpg') center center / contain no-repeat;
+      background-color: #111;
       color: #fff;
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
     }
     header h1 {
       font-size: 3rem;
